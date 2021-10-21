@@ -1,6 +1,6 @@
 <%= render "books/list", book: @book %>
 
-    <div class="col-8 offset-1">
+<div class="col-8 offset-1">
       <h2>Books</h2>
       <table class="table table-hover table-inverse">
         <thead>
@@ -13,10 +13,10 @@
         </thead>
         <tbody>
           <tr>
-            <% @books.each do |book| %>
-            <td><%=attachment_image_tag book.user.profile_image, :fill, 30, 30, fallback:"no_image.jpg" %></td>
-            <td><%= link_to book.title, book_path %></td>
-            <td><%= book.body %></td>
+            <% @user.each do |user| %>
+            <td><%=attachment_image_tag user.profile_image, :fill, 30, 30, fallback:"no_image.jpg" %></td>
+            <td><%= link_to user.books.title, book_path %></td>
+            <td><%= user.books.body %></td>
             <% end %>
           </tr>
         </tbody>
